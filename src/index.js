@@ -13,6 +13,9 @@ function filterAndExtendArrayItems(items) {
   console.log(items.filter((item) => item.a > 5).map( (item) => item.a + item.b))
 }
 
+function filterArray(items){
+    return items.filter((i) => i.a > 5).map((i) => i.a+i.b)
+}
 
 filterAndExtendArrayItems(itemsArray)
 
@@ -23,12 +26,21 @@ const arNum2 = [15, 6, 3, 20, 11];
 function mergeArraysWithoutDuplicates(array1, array2) {
 console.log([...array1, ...array2.filter((o) => array1.indexOf(o) < 0)])
 }
-
 mergeArraysWithoutDuplicates(arNum, arNum2)
+
+
+let mergeArrWithoutDuplicates = (arr1, arr2) => {
+    console.log([...arr1, ...arr2.filter((o) => !~arr1.indexOf(o))])
+} 
+mergeArrWithoutDuplicates(arNum, arNum2)
+
+arNum2.forEach(e => {
+    console.log(arNum.indexOf(e))
+});
+
 function mergeArraysWithoutDuplicatesSet(array1, array2) {
     console.log([...new Set([...array1, ...array2])])
     }
-    
 mergeArraysWithoutDuplicatesSet(arNum, arNum2)
 
 // Task 3 - write a function for n! (factorial) calculation
